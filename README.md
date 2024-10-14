@@ -19,7 +19,9 @@ TF_PYTHON_VERSION=3.9 bazel build --config=release_cpu_linux --config=opt -j 8 /
 ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 ```
 
-This will create a wheel inside the container's folder `/tmp/tensorflow_pkg`. You can download the wheel file to your computer from outside the container:
+This will create a wheel inside the container's folder `/tmp/tensorflow_pkg`. If the build fails, it is most likely due to insufficient RAM. You can allocate more RAM to the container in the Docker settings, or reduce the argument of `-j` to decrease RAM usage by the build command.
+
+When complete, you can download the wheel file to your computer from outside the container:
 
 ```bash
 docker cp custom-tensorflow-build:/tmp/tensorflow_pkg tensorflow_pkg
