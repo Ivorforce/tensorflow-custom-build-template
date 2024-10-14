@@ -4,7 +4,7 @@ I recently needed a custom build of tensorflow, and my research for custom build
 
 ### How to Use
 
-First, install Docker. Make sure the `Dockerfile` and the below commands correspond to your desired build properties. Then, run:
+First, install Docker. Make sure the `Dockerfile`, `.tf_configure.bazelrc` and the below commands correspond to your desired build properties. Then, run:
 
 ```bash
 
